@@ -7,6 +7,6 @@ class Task(BaseModel):
     id: str = Field(default_factory=lambda:uuid4())
     name: str
     description: str | None = None
-    time_start: datetime = Field(default_factory=lambda:datetime.today())
+    time_start: datetime
     parent_id: str | None = None
     child_task_list: List['Task'] = []
