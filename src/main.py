@@ -9,7 +9,7 @@ async def root():
     return 'Ok'
 
 @app.post('/set-new-task/')
-async def set_new_task(task: Task):
+async def set_new_task(task: Task) -> List[Task]:
     task_list: List[Task] = []
 
     def extract_nested(inner_task: Task):
